@@ -17,7 +17,7 @@ public class FeetController : MonoBehaviour
         if (other.gameObject.tag.Equals("Environment"))
         {
             playerMovement.IsGrounded = true;
-            playerMovement.ResetAirJumps();
+            playerMovement.TouchedGroundReset();
         }
     }
 
@@ -26,7 +26,7 @@ public class FeetController : MonoBehaviour
         if (other.gameObject.tag.Equals("Environment") && Mathf.Abs(playerMovement.getVelocity().y) < 0.01f)
         {
             playerMovement.IsGrounded = true;
-            playerMovement.ResetAirJumps();
+            playerMovement.TouchedGroundReset();
         }
     }
 
