@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private int startingDashes;
 
     [SerializeField]
-    private float dashLockTime; 
+    private float dashTime; 
     #endregion
 
     #region Cached Components
@@ -40,7 +40,9 @@ public class PlayerMovement : MonoBehaviour
 
     #region Private Variables
     private float movementX;
-    private float airJumps;
+    private int numAirJumps;
+
+    private int numDashes;
 
     private bool isGrounded = false;
 
@@ -56,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        ResetAirJumps();
+        TouchedGroundReset();
     }
     #endregion
 
@@ -70,14 +72,14 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (Input.GetButtonDown("Jump") && (isGrounded || airJumps >= 1))
+        if (Input.GetButtonDown("Jump") && (isGrounded || numAirJumps >= 1))
         {
             Jump();
         }
 
-        if (Input.GetButtonDown("Dash") && !isGrounded)
+        if (Input.GetButtonDown("Dash") && !isGrounded && numDashes >= 1)
         {
-            Dash();
+            StartDash();
         }
     }
 
@@ -117,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isGrounded)
         {
-            airJumps--;
+            numAirJumps--;
         }
         else
         {
@@ -127,8 +129,19 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(new Vector2(0, jumpForce));
     }
 
-    private void Dash()
+    private void StartDash()
     {
+        numDashes--;
+        StartCoroutine(Dash());
+    }
+
+    private IEnumerator Dash()
+    {
+        float originalGravityScale = rb.gravityScale;
+        rb.velocity = Vector2.zero;
+        isDashing = true;
+        rb.gravityScale = 0;
+
         if (isFacingRight)
         {
             rb.AddForce(new Vector2(dashForce, 0));
@@ -137,7 +150,10 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(new Vector2(-dashForce, 0));
         }
-        
+        yield return new WaitForSeconds(dashTime);
+
+        rb.gravityScale = originalGravityScale;
+        isDashing = false;
     }
 
     private void Flip()
@@ -151,14 +167,15 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region Public functions
-    public void ResetAirJumps()
+    public void TouchedGroundReset()
     {
-        airJumps = startingAirJumps;
+        numAirJumps = startingAirJumps;
+        numDashes = startingDashes;
     }
 
     public void IncreaseNumAirJumps(int num)
     {
-        airJumps = Mathf.Min(airJumps + num, maxAirJumps);
+        numAirJumps = Mathf.Min(numAirJumps + num, maxAirJumps);
     }
 
     public Vector2 getVelocity()
