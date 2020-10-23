@@ -1,0 +1,1226 @@
+fileFormatVersion: 2
+guid: c17875deb10e445e9a89252c03bf3c03
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6476557201648199885
+    second: Rock_TileMap_0
+  - first:
+      213: -4003003006382117116
+    second: Rock_TileMap_1
+  - first:
+      213: -3333589888087803322
+    second: Rock_TileMap_2
+  - first:
+      213: -6427614401334073874
+    second: Rock_TileMap_3
+  - first:
+      213: -3740055206252072858
+    second: Rock_TileMap_4
+  - first:
+      213: -5201144791335724259
+    second: Rock_TileMap_5
+  - first:
+      213: 8849234765827783661
+    second: Rock_TileMap_6
+  - first:
+      213: -1099783628770602392
+    second: Rock_TileMap_7
+  - first:
+      213: -1994172513390401534
+    second: Rock_TileMap_8
+  - first:
+      213: 9049729410783079387
+    second: Rock_TileMap_9
+  - first:
+      213: 5376432791839490813
+    second: Rock_TileMap_10
+  - first:
+      213: -4366886834782699332
+    second: Rock_TileMap_11
+  - first:
+      213: 5410489017125654444
+    second: Rock_TileMap_12
+  - first:
+      213: -2771716216311883783
+    second: Rock_TileMap_13
+  - first:
+      213: -3911377642296610506
+    second: Rock_TileMap_14
+  - first:
+      213: -5981664175246928070
+    second: Rock_TileMap_15
+  - first:
+      213: 4536622892587030425
+    second: Rock_TileMap_16
+  - first:
+      213: 4050402463091998297
+    second: Rock_TileMap_17
+  - first:
+      213: -2873775466396599231
+    second: Rock_TileMap_18
+  - first:
+      213: 5523446782808456575
+    second: Rock_TileMap_19
+  - first:
+      213: -486452176662429231
+    second: Rock_TileMap_20
+  - first:
+      213: 106963761268057735
+    second: Rock_TileMap_21
+  - first:
+      213: 7517034506828974970
+    second: Rock_TileMap_22
+  - first:
+      213: -2772972418896795638
+    second: Rock_TileMap_23
+  - first:
+      213: -6288561118521851303
+    second: Rock_TileMap_24
+  - first:
+      213: 2015661405982866575
+    second: Rock_TileMap_25
+  - first:
+      213: 3612274194106686375
+    second: Rock_TileMap_26
+  - first:
+      213: 2145192797876819372
+    second: Rock_TileMap_27
+  - first:
+      213: -593428898146445050
+    second: Rock_TileMap_28
+  - first:
+      213: -5625029868825926150
+    second: Rock_TileMap_29
+  - first:
+      213: -8392097631816318103
+    second: Rock_TileMap_30
+  - first:
+      213: -3144278099396510496
+    second: Rock_TileMap_31
+  - first:
+      213: -7165322818838560863
+    second: Rock_TileMap_32
+  - first:
+      213: -679354116719281866
+    second: Rock_TileMap_33
+  - first:
+      213: -2014421531435999237
+    second: Rock_TileMap_34
+  - first:
+      213: -1752325471818406177
+    second: Rock_TileMap_35
+  - first:
+      213: 2345878201538692003
+    second: Rock_TileMap_36
+  - first:
+      213: -3456557821807341997
+    second: Rock_TileMap_37
+  - first:
+      213: -6059368076049526945
+    second: Rock_TileMap_38
+  - first:
+      213: 4708850006082871750
+    second: Rock_TileMap_39
+  - first:
+      213: -5909435164465127568
+    second: Rock_TileMap_40
+  - first:
+      213: 4459040869501411816
+    second: Rock_TileMap_41
+  - first:
+      213: -2586644534715646201
+    second: Rock_TileMap_42
+  - first:
+      213: 7476857199292599606
+    second: Rock_TileMap_43
+  - first:
+      213: 1744972058010009917
+    second: Rock_TileMap_44
+  - first:
+      213: 2687235228618278606
+    second: Rock_TileMap_45
+  - first:
+      213: 872260201912356405
+    second: Rock_TileMap_46
+  - first:
+      213: -4852838929698330469
+    second: Rock_TileMap_47
+  - first:
+      213: -5304231733283901494
+    second: Rock_TileMap_48
+  - first:
+      213: -3890842347041355505
+    second: Rock_TileMap_49
+  - first:
+      213: 6130398577348625592
+    second: Rock_TileMap_50
+  - first:
+      213: 7310274035456516972
+    second: Rock_TileMap_51
+  - first:
+      213: -7249890445192533116
+    second: Rock_TileMap_52
+  - first:
+      213: 2827768169624278117
+    second: Rock_TileMap_53
+  - first:
+      213: 4832700537193465572
+    second: Rock_TileMap_54
+  - first:
+      213: 7919616715025281841
+    second: Rock_TileMap_55
+  - first:
+      213: 4661122527681244043
+    second: Rock_TileMap_56
+  - first:
+      213: -4967894614752444239
+    second: Rock_TileMap_57
+  - first:
+      213: 2955938135459373633
+    second: Rock_TileMap_58
+  - first:
+      213: 3458612342484108240
+    second: Rock_TileMap_59
+  - first:
+      213: 7828302363929154885
+    second: Rock_TileMap_60
+  - first:
+      213: -6731371685246479598
+    second: Rock_TileMap_61
+  - first:
+      213: 4627468333227592198
+    second: Rock_TileMap_62
+  - first:
+      213: 3968364569075840992
+    second: Rock_TileMap_63
+  - first:
+      213: -5724857103285983198
+    second: Rock_TileMap_64
+  - first:
+      213: 7646996745811558572
+    second: Rock_TileMap_65
+  - first:
+      213: -89547390901412513
+    second: Rock_TileMap_66
+  - first:
+      213: -6217831336796694663
+    second: Rock_TileMap_67
+  - first:
+      213: -7824780869268548638
+    second: Rock_TileMap_68
+  - first:
+      213: 1443453000272335580
+    second: Rock_TileMap_69
+  - first:
+      213: -511351680287908333
+    second: Rock_TileMap_70
+  - first:
+      213: -3453976172031059244
+    second: Rock_TileMap_71
+  - first:
+      213: 7755869511470439518
+    second: Rock_TileMap_72
+  - first:
+      213: -8850602520985292121
+    second: Rock_TileMap_73
+  - first:
+      213: -6453386997016846496
+    second: Rock_TileMap_74
+  - first:
+      213: -189798455116134214
+    second: Rock_TileMap_75
+  - first:
+      213: 7675455609000378266
+    second: Rock_TileMap_76
+  - first:
+      213: 5505024692856657721
+    second: Rock_TileMap_77
+  - first:
+      213: -3128050707167738095
+    second: Rock_TileMap_78
+  - first:
+      213: 2693233322522872335
+    second: Rock_TileMap_79
+  - first:
+      213: 5448892318823243331
+    second: Rock_TileMap_80
+  - first:
+      213: 1304926173813656693
+    second: Rock_TileMap_81
+  - first:
+      213: 1052093473469040496
+    second: Rock_TileMap_82
+  - first:
+      213: -5013652436974224097
+    second: Rock_TileMap_83
+  - first:
+      213: 7531501883228740379
+    second: Rock_TileMap_84
+  - first:
+      213: -3962087672611074126
+    second: Rock_TileMap_85
+  - first:
+      213: 7558616751028467932
+    second: Rock_TileMap_86
+  - first:
+      213: -8299422418224424680
+    second: Rock_TileMap_87
+  - first:
+      213: 994737292730111901
+    second: Rock_TileMap_88
+  - first:
+      213: 205023130366919027
+    second: Rock_TileMap_89
+  - first:
+      213: -1865745528006204682
+    second: Rock_TileMap_90
+  - first:
+      213: 4037095208837699581
+    second: Rock_TileMap_91
+  - first:
+      213: -5075176706710107052
+    second: Rock_TileMap_92
+  - first:
+      213: 2170030433156798488
+    second: Rock_TileMap_93
+  - first:
+      213: -6914423635128517623
+    second: Rock_TileMap_94
+  - first:
+      213: -4756329133579620252
+    second: Rock_TileMap_95
+  - first:
+      213: -2708807682578716807
+    second: Rock_TileMap_96
+  - first:
+      213: -1477036344179187038
+    second: Rock_TileMap_97
+  - first:
+      213: -4198086636225510023
+    second: Rock_TileMap_98
+  - first:
+      213: 5990771363450749589
+    second: Rock_TileMap_99
+  - first:
+      213: -5508642301381176504
+    second: Rock_TileMap_100
+  - first:
+      213: -7670730130970893070
+    second: Rock_TileMap_101
+  - first:
+      213: 7924649037191781257
+    second: Rock_TileMap_102
+  - first:
+      213: 4835675600706447268
+    second: Rock_TileMap_103
+  - first:
+      213: -1568105676226187417
+    second: Rock_TileMap_104
+  - first:
+      213: 7470739546318827685
+    second: Rock_TileMap_105
+  - first:
+      213: -345228199444093064
+    second: Rock_TileMap_106
+  - first:
+      213: 843166913930653004
+    second: Rock_TileMap_107
+  - first:
+      213: -5459300775101612628
+    second: Rock_TileMap_108
+  - first:
+      213: 4425391300742636477
+    second: Rock_TileMap_109
+  - first:
+      213: 65515915665639365
+    second: Rock_TileMap_110
+  - first:
+      213: 6009090690632874263
+    second: Rock_TileMap_111
+  - first:
+      213: -6781245706424412160
+    second: Rock_TileMap_112
+  - first:
+      213: -8793389030065354724
+    second: Rock_TileMap_113
+  - first:
+      213: 6069035394714893058
+    second: Rock_TileMap_114
+  - first:
+      213: 1817781786112981337
+    second: Rock_TileMap_115
+  - first:
+      213: 6906704141558949336
+    second: Rock_TileMap_116
+  - first:
+      213: 5354819149359165653
+    second: Rock_TileMap_117
+  - first:
+      213: 3993737509672452097
+    second: Rock_TileMap_118
+  - first:
+      213: 8598085404289614107
+    second: Rock_TileMap_119
+  - first:
+      213: 9162514995071555976
+    second: Rock_TileMap_120
+  - first:
+      213: 1336873099463292201
+    second: Rock_TileMap_121
+  - first:
+      213: 7239124867878458746
+    second: Rock_TileMap_122
+  - first:
+      213: 4708743203954684628
+    second: Rock_TileMap_123
+  - first:
+      213: -6284612408113501997
+    second: Rock_TileMap_124
+  - first:
+      213: -4636901155658328878
+    second: Rock_TileMap_125
+  - first:
+      213: -414791000569956403
+    second: Rock_TileMap_126
+  - first:
+      213: -7016405976206830553
+    second: Rock_TileMap_127
+  - first:
+      213: -1986582060633984166
+    second: Rock_TileMap_128
+  - first:
+      213: 1621722131589785000
+    second: Rock_TileMap_129
+  - first:
+      213: 3084795479951678186
+    second: Rock_TileMap_130
+  - first:
+      213: 3802296912185203793
+    second: Rock_TileMap_131
+  - first:
+      213: -4137675629692607495
+    second: Rock_TileMap_132
+  - first:
+      213: -2520352876191995349
+    second: Rock_TileMap_133
+  - first:
+      213: -4777908949650966641
+    second: Rock_TileMap_134
+  - first:
+      213: -5088445387858291630
+    second: Rock_TileMap_135
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rock_TileMap_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 337d2441a85ae16a0800000000000000
+      internalID: -6476557201648199885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40fe5c979f97278c0800000000000000
+      internalID: -4003003006382117116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a31bda8a5bcb1d0800000000000000
+      internalID: -3333589888087803322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee52c47c1c68cc6a0800000000000000
+      internalID: -6427614401334073874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 660bef60b97a81cc0800000000000000
+      internalID: -3740055206252072858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b9f0f7e52d1d7b0800000000000000
+      internalID: -5201144791335724259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: debb33f522cceca70800000000000000
+      internalID: 8849234765827783661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8629655dd98ccb0f0800000000000000
+      internalID: -1099783628770602392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20864862aa64354e0800000000000000
+      internalID: -1994172513390401534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdb612b93f8179d70800000000000000
+      internalID: 9049729410783079387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df2ca5c732dec9a40800000000000000
+      internalID: 5376432791839490813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb0827e7f83b563c0800000000000000
+      internalID: -4366886834782699332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caf4de6581be51b40800000000000000
+      internalID: 5410489017125654444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f75a8459c2e889d0800000000000000
+      internalID: -2771716216311883783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6317188f1cef7b9c0800000000000000
+      internalID: -3911377642296610506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a371ab4ff1cdcfca0800000000000000
+      internalID: -5981664175246928070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9971e881c7255fe30800000000000000
+      internalID: 4536622892587030425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e37f9849be53830800000000000000
+      internalID: 4050402463091998297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_18
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14cb231707c4e18d0800000000000000
+      internalID: -2873775466396599231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_19
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7d7211a59937ac40800000000000000
+      internalID: 5523446782808456575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d102d99256cf39f0800000000000000
+      internalID: -486452176662429231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_21
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786e83269f20c7100800000000000000
+      internalID: 106963761268057735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b05e79e0fd15860800000000000000
+      internalID: 7517034506828974970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_23
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0863bfd64c6489d0800000000000000
+      internalID: -2772972418896795638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_24
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9520c2e1bfa8ab8a0800000000000000
+      internalID: -6288561118521851303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_25
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8cb21b8e5119fb10800000000000000
+      internalID: 2015661405982866575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab1a0bad30612230800000000000000
+      internalID: 3612274194106686375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca59c24eb7145cd10800000000000000
+      internalID: 2145192797876819372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_28
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 609978eaf87b3c7f0800000000000000
+      internalID: -593428898146445050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_29
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af52ba11321efe1b0800000000000000
+      internalID: -5625029868825926150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_30
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9630137caa7498b80800000000000000
+      internalID: -8392097631816318103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_31
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec3e6a4ab74d54d0800000000000000
+      internalID: -3144278099396510496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_32
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af702a1cd8af8c90800000000000000
+      internalID: -7165322818838560863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_TileMap_33
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6397f3cb7037296f0800000000000000
+      internalID: -679354116719281866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

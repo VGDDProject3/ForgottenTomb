@@ -19,6 +19,18 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private int startingAirJumps;
+
+    [SerializeField]
+    private float dashForce;
+
+    [SerializeField]
+    private int maxDashes;
+
+    [SerializeField]
+    private int startingDashes;
+
+    [SerializeField]
+    private float dashLockTime; 
     #endregion
 
     #region Cached Components
@@ -32,13 +44,12 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isGrounded = false;
 
-    private bool facingRight = true;
+    private bool isFacingRight = true;
 
-    private bool isLocked = false;
+    private bool isDashing = false;
 
     public bool IsGrounded { get => isGrounded; set => isGrounded = value; }
-    public bool FacingRight { get => facingRight; set => facingRight = value; }
-    public bool IsLocked { get => isLocked; set => isLocked = value; }
+    public bool IsFacingRight { get => isFacingRight; set => isFacingRight = value; }
     #endregion
 
     #region On Start Functions
@@ -52,20 +63,30 @@ public class PlayerMovement : MonoBehaviour
     #region Update Functions
     private void Update()
     {
-        if (IsLocked)
+        movementX = Input.GetAxisRaw("Horizontal");
+
+        if (isDashing)
         {
             return;
         }
-        movementX = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetButtonDown("Jump") && (isGrounded || airJumps >= 1))
         {
             Jump();
         }
+
+        if (Input.GetButtonDown("Dash") && !isGrounded)
+        {
+            Dash();
+        }
     }
 
     private void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
         Move();
     }
 
@@ -74,13 +95,8 @@ public class PlayerMovement : MonoBehaviour
     #region Movement Functions
     private void Move()
     {
-        if (movementX * rb.velocity.x <= 0 || isLocked) {
+        if (movementX * rb.velocity.x <= 0) {
             rb.velocity = new Vector2(0, rb.velocity.y);
-        }
-
-        if (IsLocked)
-        {
-            return;
         }
 
         rb.AddForce(new Vector2(moveForce * movementX, 0));
@@ -91,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(-maxMoveSpeed, rb.velocity.y);
         }
 
-        if ((movementX > 0 && !FacingRight) || (movementX < 0 && FacingRight))
+        if ((movementX > 0 && !IsFacingRight) || (movementX < 0 && isFacingRight))
         {
             Flip();
         }
@@ -103,13 +119,30 @@ public class PlayerMovement : MonoBehaviour
         {
             airJumps--;
         }
+        else
+        {
+            isGrounded = false;
+        }
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(new Vector2(0, jumpForce));
     }
 
+    private void Dash()
+    {
+        if (isFacingRight)
+        {
+            rb.AddForce(new Vector2(dashForce, 0));
+        }
+        else
+        {
+            rb.AddForce(new Vector2(-dashForce, 0));
+        }
+        
+    }
+
     private void Flip()
     {
-        FacingRight = !FacingRight;
+        IsFacingRight = !isFacingRight;
 
         Vector2 localScale = transform.localScale;
         localScale.x *= -1;
