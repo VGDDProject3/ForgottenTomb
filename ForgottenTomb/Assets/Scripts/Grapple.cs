@@ -13,6 +13,9 @@ public class Grapple : MonoBehaviour
     private float linearSwingAcceleration;
 
     [SerializeField]
+    private float releaseSpeedBoost;
+
+    [SerializeField]
     private float damper;
 
     [SerializeField]
@@ -114,6 +117,9 @@ public class Grapple : MonoBehaviour
 
             yield return null; 
         }
+
+        // adding some velocity at the end of the grapple
+        rb.velocity += rb.velocity.normalized * releaseSpeedBoost;
 
         Destroy(tempSpringJoint);
         grappleRenderer.enabled = false;

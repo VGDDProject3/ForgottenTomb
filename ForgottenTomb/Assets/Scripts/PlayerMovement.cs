@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     private float maxMoveSpeed;
 
     [SerializeField]
+    private float maxPlayerInputMoveSpeed;
+
+    [SerializeField]
     private float jumpForce;
 
     [SerializeField]
@@ -30,7 +33,18 @@ public class PlayerMovement : MonoBehaviour
     private int startingDashes;
 
     [SerializeField]
-    private float dashTime; 
+    private float dashTime;
+
+    [SerializeField]
+    [Range(0.1f, 1)]
+    private float xVelDecayRate;
+
+    [SerializeField]
+    private float minimumXVelocity;
+
+    [SerializeField]
+    private bool useMousePosForDash;
+
     #endregion
 
     #region Cached Components
@@ -40,7 +54,12 @@ public class PlayerMovement : MonoBehaviour
 
     #region Private Variables
     private float movementX;
+    private float movementY;
+    private Vector2 mousePos;
     private int numAirJumps;
+
+        // the player can only influence part of the character's momentum, with its own cap.
+    private float playerInputXVel = 0;
 
     private int numDashes;
 
@@ -66,6 +85,8 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         movementX = Input.GetAxisRaw("Horizontal");
+        movementY = Input.GetAxisRaw("Vertical");
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (isDashing)
         {
@@ -97,12 +118,24 @@ public class PlayerMovement : MonoBehaviour
     #region Movement Functions
     private void Move()
     {
-        if (movementX * rb.velocity.x <= 0) {
-            rb.velocity = new Vector2(0, rb.velocity.y);
+        if (movementX * rb.velocity.x <= 0)
+        {
+            float newXVel = rb.velocity.x * (1 - xVelDecayRate);
+            if (Mathf.Abs(newXVel) < minimumXVelocity)
+            {
+                newXVel = 0;
+            }
+            rb.velocity = new Vector2(newXVel, rb.velocity.y);
         }
 
-        rb.AddForce(new Vector2(moveForce * movementX, 0));
+        if (Mathf.Abs(rb.velocity.x) < maxPlayerInputMoveSpeed)
+        {
+            rb.AddForce(new Vector2(moveForce * movementX, 0));
+        }
+        
 
+        
+            // capping max move speed horizontally
         if (rb.velocity.x > maxMoveSpeed) {
             rb.velocity = new Vector2(maxMoveSpeed, rb.velocity.y);
         } else if (rb.velocity.x < -maxMoveSpeed) {
@@ -132,24 +165,35 @@ public class PlayerMovement : MonoBehaviour
     private void StartDash()
     {
         numDashes--;
-        StartCoroutine(Dash());
+        //rb.AddForce();//, ForceMode2D.Impulse);
+        StartCoroutine(Dash(CreateDashVector(useMousePosForDash) * dashForce));
     }
 
-    private IEnumerator Dash()
+    private Vector2 CreateDashVector(bool isMouse)
+    {
+            // just 'cuz I implemented both – if "isMouse" is true, the dash angle is calculated from the mouse position;
+        if (isMouse)
+        {
+            
+            Vector2 startPos = this.transform.position;
+            return new Vector2(mousePos.x - startPos.x, mousePos.y - startPos.y).normalized;
+        }
+            // otherwise it's from the wasd inputs
+        else
+        {
+            return new Vector2(movementX, movementY).normalized;
+        }
+    }
+
+    private IEnumerator Dash(Vector2 dashDirection)
     {
         float originalGravityScale = rb.gravityScale;
-        rb.velocity = Vector2.zero;
+        //rb.velocity = Vector2.zero;
         isDashing = true;
         rb.gravityScale = 0;
 
-        if (isFacingRight)
-        {
-            rb.AddForce(new Vector2(dashForce, 0));
-        }
-        else
-        {
-            rb.AddForce(new Vector2(-dashForce, 0));
-        }
+        rb.AddForce(dashDirection);
+
         yield return new WaitForSeconds(dashTime);
 
         rb.gravityScale = originalGravityScale;
