@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MovementTest.unity
     guid: 122adf0597db74db0a951d5ac835196a
+  - enabled: 1
+    path: Assets/Scenes/GrappleTest.unity
+    guid: 7758c3f4f0835466f9f4b5daa15efbe8
   m_configObjects: {}
