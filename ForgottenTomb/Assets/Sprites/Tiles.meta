@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 6f40a836171eac44ca86a0df4bcae351
-=======
-guid: bf27e84483de2461ebfac08da2d8e63e
->>>>>>> 19f0969... Added test level, made grapple left click (temporarily)
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

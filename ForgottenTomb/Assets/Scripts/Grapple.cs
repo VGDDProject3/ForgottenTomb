@@ -51,7 +51,7 @@ public class Grapple : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !grappling)
+        if (Input.GetButtonDown("Fire2") && !grappling)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             print("Shot grapple at " + mousePos.ToString());
@@ -104,7 +104,7 @@ public class Grapple : MonoBehaviour
 
         Rigidbody2D rb = this.gameObject.GetComponent<Rigidbody2D>();
 
-        while (Input.GetButton("Fire1"))
+        while (Input.GetButton("Fire2"))
         {
             rb.velocity += new Vector2(rb.velocity.normalized.x, 0) * linearSwingAcceleration; // adds some extra directional acceleration
 
