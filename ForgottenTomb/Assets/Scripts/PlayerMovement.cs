@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     private float jumpForce;
 
     [SerializeField]
+    private float wallJumpForce;
+
+    [SerializeField]
     private int maxAirJumps;
 
     [SerializeField]
@@ -44,7 +47,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private bool useMousePosForDash;
-
     #endregion
 
     #region Cached Components
@@ -69,8 +71,14 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isDashing = false;
 
+    private bool isTouchingEnvironmentRight = false;
+
+    private bool isTouchingEnvironmentLeft = false;
+
     public bool IsGrounded { get => isGrounded; set => isGrounded = value; }
     public bool IsFacingRight { get => isFacingRight; set => isFacingRight = value; }
+    public bool IsTouchingEnvironmentRight { get => isTouchingEnvironmentRight; set => isTouchingEnvironmentRight = value; }
+    public bool IsTouchingEnvironmentLeft { get => isTouchingEnvironmentLeft; set => isTouchingEnvironmentLeft = value; }
     #endregion
 
     #region On Start Functions
@@ -93,7 +101,12 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (Input.GetButtonDown("Jump") && (isGrounded || numAirJumps >= 1))
+        if (Input.GetButtonDown("Jump") && (isTouchingEnvironmentLeft || isTouchingEnvironmentRight))
+        {
+            Debug.Log("test");
+            WallJump();
+        }
+        else if (Input.GetButtonDown("Jump") && (isGrounded || numAirJumps >= 1))
         {
             Jump();
         }
@@ -146,6 +159,21 @@ public class PlayerMovement : MonoBehaviour
         {
             Flip();
         }
+    }
+
+    private void WallJump()
+    {
+        float force;
+        if (isTouchingEnvironmentRight)
+        {
+            force = -wallJumpForce;
+        }
+        else
+        {
+            force = wallJumpForce;
+        }
+        rb.velocity = new Vector2(0, 0);
+        rb.AddForce(new Vector2(force, Mathf.Abs(force)));
     }
 
     private void Jump()
@@ -227,4 +255,5 @@ public class PlayerMovement : MonoBehaviour
         return rb.velocity;
     }
     #endregion
+
 }
