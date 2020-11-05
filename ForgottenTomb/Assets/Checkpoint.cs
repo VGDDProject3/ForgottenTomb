@@ -6,7 +6,7 @@ public class Checkpoint : MonoBehaviour
 {
     #region Editor Variables
     [SerializeField]
-    private GameManager gameManager;
+    private CheckpointManager checkpointManager;
 
     #endregion
 
@@ -14,7 +14,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (collision.tag.Equals("Player"))
         {
-            gameManager.ActiveCheckpoint = this;
+            checkpointManager.ActiveCheckpoint = this;
         }
     }
 }
