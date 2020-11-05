@@ -4,27 +4,14 @@ using UnityEngine;
 
 public class CheckpointManager : MonoBehaviour
 {
-    #region Editor Variables
-    [SerializeField]
-    private GameObject player;
-    #endregion
-
     #region Private Variables
     private Checkpoint activeCheckpoint;
     public Checkpoint ActiveCheckpoint { get => activeCheckpoint; set => activeCheckpoint = value; }
     #endregion
 
-    public void Update()
+    public void Respawn(GameObject player)
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            player.SetActive(false);
-            RespawnPlayer();
-        }
-    }
-
-    public void RespawnPlayer()
-    {
+        player.SetActive(false);
         Collider2D checkpointCollider = ActiveCheckpoint.GetComponent<Collider2D>();
         player.transform.position = checkpointCollider.transform.position - new Vector3(0, checkpointCollider.bounds.extents.y, 0);
 

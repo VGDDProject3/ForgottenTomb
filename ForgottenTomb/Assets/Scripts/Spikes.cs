@@ -8,8 +8,7 @@ public class Spikes : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
-            Debug.Log("Player takes damage!");
-            //collision.gameObject.SendMessage("ApplyDamage", 10);
+            coll.gameObject.GetComponent<PlayerMisc>().Die();
         }
     }
 }
