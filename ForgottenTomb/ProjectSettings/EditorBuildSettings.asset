@@ -11,7 +11,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MovementTest.unity
     guid: 122adf0597db74db0a951d5ac835196a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GrappleTest.unity
     guid: 7758c3f4f0835466f9f4b5daa15efbe8
+  - enabled: 1
+    path: Assets/Scenes/Celine-Lvl1.unity
+    guid: 69d4a9ed874fc2c4c934f809078663eb
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 5eb06db1f054f4b4fb8010bb7235fb7a
   m_configObjects: {}

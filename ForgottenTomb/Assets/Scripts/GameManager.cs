@@ -24,7 +24,17 @@ public class GameManager : MonoBehaviour
     #region Scene_transitions
     public void StartGame()
     {
-        SceneManager.LoadScene("GrappleTest");
+        SceneManager.LoadScene("Celine-Lvl1");
+    }
+
+    public void WinGame()
+    {
+        SceneManager.LoadScene("Win");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     #endregion
 }

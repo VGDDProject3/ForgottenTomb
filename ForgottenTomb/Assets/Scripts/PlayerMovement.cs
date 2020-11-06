@@ -81,6 +81,12 @@ public class PlayerMovement : MonoBehaviour
     public bool IsTouchingEnvironmentLeft { get => isTouchingEnvironmentLeft; set => isTouchingEnvironmentLeft = value; }
     #endregion
 
+    #region Collectible variables
+    private int keys = 0;
+
+    public int Keys { get => keys; set => keys = value; }
+    #endregion
+
     #region On Start Functions
     private void Start()
     {
