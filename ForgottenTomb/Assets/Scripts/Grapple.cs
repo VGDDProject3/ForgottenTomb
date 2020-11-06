@@ -53,8 +53,8 @@ public class Grapple : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2") && !grappling)
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            print("Shot grapple at " + mousePos.ToString());
+            Vector2 mousePos = CreateGrappleTargetVector(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            //print("Shot grapple at " + mousePos.ToString());
             ShootGrapple(mousePos);
         }
     }
@@ -126,6 +126,14 @@ public class Grapple : MonoBehaviour
         Destroy(tempFulcrum);
 
         grappling = false;
+    }
+
+    private Vector2 CreateGrappleTargetVector(Vector2 mousePos)
+    {
+        
+        Vector2 startPos = this.transform.position;
+        return startPos + new Vector2(mousePos.x - startPos.x, mousePos.y - startPos.y).normalized * grappleRange;
+        
     }
 
     #endregion

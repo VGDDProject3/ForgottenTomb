@@ -260,6 +260,13 @@ public class PlayerMovement : MonoBehaviour
     {
         return rb.velocity;
     }
+
+    public void Respawn()
+    {
+        movementX = 0;
+        movementY = 0;
+        rb.velocity = Vector2.zero;
+    }
     #endregion
 
 }
