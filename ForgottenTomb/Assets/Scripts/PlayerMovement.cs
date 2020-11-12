@@ -51,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
 
     #region Cached Components
     private Rigidbody2D rb;
+
+    private Animator anim;
     #endregion
 
 
@@ -91,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         TouchedGroundReset();
     }
     #endregion
@@ -101,6 +104,9 @@ public class PlayerMovement : MonoBehaviour
         movementX = Input.GetAxisRaw("Horizontal");
         movementY = Input.GetAxisRaw("Vertical");
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        anim.SetFloat("xvelocity", Mathf.Abs(movementX));
+        anim.SetBool("grounded", IsGrounded);
 
         if (isDashing)
         {
@@ -191,6 +197,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
         }
+        anim.SetTrigger("jump");
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(new Vector2(0, jumpForce));
     }
