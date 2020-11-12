@@ -109,7 +109,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && (isTouchingEnvironmentLeft || isTouchingEnvironmentRight))
         {
-            Debug.Log("test");
             WallJump();
         }
         else if (Input.GetButtonDown("Jump") && (isGrounded || numAirJumps >= 1))
