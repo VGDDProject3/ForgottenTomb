@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour
+public class Coin : MonoBehaviour
 {
     #region Editor Variables
     [SerializeField]
     private PlayerMovement playerMovement;
     #endregion
-    public void ObtainKey() 
+    public void ObtainCoin() 
     {
-        playerMovement.Keys = playerMovement.Keys + 1;
+        playerMovement.Coins = playerMovement.Coins + 1;
 
     }
 
@@ -18,8 +18,8 @@ public class Key : MonoBehaviour
      {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("touch key");
-            ObtainKey();
+            Debug.Log("touch coin");
+            ObtainCoin();
             Destroy(this.gameObject);
         }
      }

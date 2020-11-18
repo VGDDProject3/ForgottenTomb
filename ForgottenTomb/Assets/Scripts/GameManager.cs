@@ -37,4 +37,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
     #endregion
+
+    #region Other_functions
+    public void ExitGame() {
+        Application.Quit();
+        Debug.Log("The game will close in build");
+    }
+    #endregion
 }

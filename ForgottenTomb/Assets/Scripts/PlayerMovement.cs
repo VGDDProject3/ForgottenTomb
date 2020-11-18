@@ -94,6 +94,10 @@ public class PlayerMovement : MonoBehaviour
     private int keys = 0;
 
     public int Keys { get => keys; set => keys = value; }
+
+    private int coins = 0;
+
+    public int Coins { get => coins; set => coins = value; }
     #endregion
 
     #region On Start Functions
