@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    #region Public Variables
+    public enum Side
+    {
+        Left,
+        Right
+    }
+    #endregion
+
     #region Editor Variables
     [SerializeField]
     private float moveForce;
@@ -73,14 +81,13 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isDashing = false;
 
-    private bool isTouchingEnvironmentRight = false;
+    private bool isTouchingEnvironmentWall = false;
 
-    private bool isTouchingEnvironmentLeft = false;
+    private Side? lastWallJumpedSide;
 
     public bool IsGrounded { get => isGrounded; set => isGrounded = value; }
     public bool IsFacingRight { get => isFacingRight; set => isFacingRight = value; }
-    public bool IsTouchingEnvironmentRight { get => isTouchingEnvironmentRight; set => isTouchingEnvironmentRight = value; }
-    public bool IsTouchingEnvironmentLeft { get => isTouchingEnvironmentLeft; set => isTouchingEnvironmentLeft = value; }
+    public bool IsTouchingEnvironmentWall { get => isTouchingEnvironmentWall; set => isTouchingEnvironmentWall = value; }
     #endregion
 
     #region Collectible variables
@@ -113,7 +120,8 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (Input.GetButtonDown("Jump") && (isTouchingEnvironmentLeft || isTouchingEnvironmentRight))
+        if (Input.GetButtonDown("Jump") && isTouchingEnvironmentWall && ((isFacingRight && lastWallJumpedSide != Side.Right) ||
+            !isFacingRight && lastWallJumpedSide != Side.Left))
         {
             WallJump();
         }
@@ -175,13 +183,15 @@ public class PlayerMovement : MonoBehaviour
     private void WallJump()
     {
         float force;
-        if (isTouchingEnvironmentRight)
+        if (isFacingRight)
         {
             force = -wallJumpForce;
+            lastWallJumpedSide = Side.Right;
         }
         else
         {
             force = wallJumpForce;
+            lastWallJumpedSide = Side.Left;
         }
         rb.velocity = new Vector2(0, 0);
         rb.AddForce(new Vector2(force, Mathf.Abs(force)));
@@ -255,6 +265,7 @@ public class PlayerMovement : MonoBehaviour
     {
         numAirJumps = startingAirJumps;
         numDashes = startingDashes;
+        lastWallJumpedSide = null;
     }
 
     public void IncreaseNumAirJumps(int num)
