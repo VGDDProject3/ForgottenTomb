@@ -55,6 +55,13 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private bool useMousePosForDash;
+
+    [SerializeField]
+    private GameObject jumpEffect;
+
+    [SerializeField]
+    private GameObject dashAfterImage;
+
     #endregion
 
     #region Cached Components
@@ -203,6 +210,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+
         if (!isGrounded)
         {
             numAirJumps--;
@@ -211,6 +219,9 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
         }
+
+            // creating and destroying the jump effect
+        Destroy(Instantiate(jumpEffect, this.transform.position, Quaternion.identity), 0.5f);
         anim.SetTrigger("jump");
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(new Vector2(0, jumpForce));
