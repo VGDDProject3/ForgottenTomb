@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("TitleMenu");
     }
     #endregion
 
