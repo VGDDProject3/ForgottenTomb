@@ -4786,7 +4786,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7777319268414921278}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 0.13, z: 0}
+  m_LocalPosition: {x: -0.05, y: 0.13, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7777319268506622767}
@@ -4868,8 +4868,6 @@ MonoBehaviour:
   maxIntensity: 1.8
   minIntensity: 0.9
   maxChangePerFrame: 0.05
-  randomVariationChance: 5
-  ranDist: 1
 --- !u!1 &7777319268506622766
 GameObject:
   m_ObjectHideFlags: 0
