@@ -102,9 +102,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
 
     private bool isDashing = false;
-
+    
     private bool hasAfterimages = false;
-
     private bool isTouchingEnvironmentWall = false;
 
     private Side? lastWallJumpedSide;
@@ -112,11 +111,8 @@ public class PlayerMovement : MonoBehaviour
     public bool IsGrounded { get => isGrounded; set => isGrounded = value; }
     public bool IsFacingRight { get => isFacingRight; set => isFacingRight = value; }
     public bool IsTouchingEnvironmentWall { get => isTouchingEnvironmentWall; set => isTouchingEnvironmentWall = value; }
-
     private ObjectPool jumpEffectObjectPool, afterimageObjectPool, landingEffectObjectPool, runEffectObjectPool, dashEffectObjectPool;
     private bool wasGrounded = false;
-    
-    
     #endregion
 
     #region Collectible variables
