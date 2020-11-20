@@ -14,9 +14,9 @@ public class Key : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2d(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
      {
-         if (collision.gameObject.tag.Equals("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("touch key");
             ObtainKey();

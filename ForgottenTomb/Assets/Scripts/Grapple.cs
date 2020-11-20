@@ -27,7 +27,11 @@ public class Grapple : MonoBehaviour
     [SerializeField]
     private float minSpringiness, maxSpringiness;
 
+    [SerializeField]
+    private float grappleExtendTime, grappleRetractTime;
 
+    [SerializeField]
+    private AnimationCurve extendCurve, retractCurve;
 
     [SerializeField]
     private GameObject fulcrum;
@@ -77,13 +81,42 @@ public class Grapple : MonoBehaviour
             print("Hit something at " + hit.point.ToString());
             Debug.DrawLine(startPos, hit.point, Color.green, 2.0f);
 
-            StartCoroutine(ManageGrapple(hit.point, hit.collider.gameObject));
+            StartCoroutine(ExtendGrapple(hit.point, hit.collider.gameObject));
             return true;
         }
         else
         {
+            //StartCoroutine(ExtendGrapple(hit.point));
             return false;
         }
+    }
+
+    private IEnumerator ExtendGrapple(Vector2 target, GameObject hitObject = null)
+    {
+        grappling = true;
+
+        float grappleTimer = grappleExtendTime;
+        grappleRenderer.enabled = true;
+        while (grappleTimer > 0)
+        {
+            grappleTimer -= Time.deltaTime;
+
+            Vector2 grappleTipPoint = Vector2.Lerp(transform.position, target, extendCurve.Evaluate(1 - (grappleTimer / grappleExtendTime)));
+
+            grappleRenderer.SetPositions(new Vector3[] { ((Vector3)transform.position), ((Vector3)grappleTipPoint) });
+
+            yield return new WaitForEndOfFrame();
+        }
+        if (hitObject != null)
+        {
+            StartCoroutine(ManageGrapple(target, hitObject));
+        }
+        else
+        {
+            StartCoroutine(RetractGrapple(target));
+        }
+        
+
     }
 
     private IEnumerator ManageGrapple(Vector2 hitPoint, GameObject hitObject)
@@ -122,9 +155,26 @@ public class Grapple : MonoBehaviour
         rb.velocity += rb.velocity.normalized * releaseSpeedBoost;
 
         Destroy(tempSpringJoint);
-        grappleRenderer.enabled = false;
         Destroy(tempFulcrum);
 
+        StartCoroutine(RetractGrapple(hitPoint));
+    }
+
+    private IEnumerator RetractGrapple(Vector2 origin)
+    {
+        float retractTimer = grappleRetractTime;
+        while (retractTimer > 0)
+        {
+            retractTimer -= Time.deltaTime;
+
+            Vector2 grappleTipPoint = Vector2.Lerp(transform.position, origin, retractCurve.Evaluate(retractTimer / grappleRetractTime));
+
+            grappleRenderer.SetPositions(new Vector3[] { ((Vector3)transform.position), ((Vector3)grappleTipPoint) });
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        grappleRenderer.enabled = false;
         grappling = false;
     }
 
