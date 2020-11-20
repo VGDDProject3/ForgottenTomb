@@ -1,19 +1,28 @@
 fileFormatVersion: 2
-guid: 049f653ea8fe242edb0791ac9242ce53
+guid: e0489395f787b4791928d411cfe7e066
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -234283515061808945
-    second: Forgotten Tomb Character Design 2 Run_0
+      213: -100826344002260007
+    second: Smoke clouds_0
   - first:
-      213: -6964158245025622621
-    second: Forgotten Tomb Character Design 2 Run_1
+      213: -1675111971892612689
+    second: Smoke clouds_1
   - first:
-      213: 4673295488438218035
-    second: Forgotten Tomb Character Design 2 Run_2
+      213: 9132125719237881863
+    second: Smoke clouds_2
   - first:
-      213: -4271451431522463130
-    second: Forgotten Tomb Character Design 2 Run_3
+      213: 5954328005799870239
+    second: Smoke clouds_3
+  - first:
+      213: -2796425586710858748
+    second: Smoke clouds_4
+  - first:
+      213: 6623938880818830242
+    second: Smoke clouds_5
+  - first:
+      213: -3473536041800955260
+    second: Smoke clouds_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -99,7 +108,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Forgotten Tomb Character Design 2 Run_0
+      name: Smoke clouds_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d37ebd69fac99ef0800000000000000
+      internalID: -100826344002260007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smoke clouds_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa13654698ec0c8e0800000000000000
+      internalID: -1675111971892612689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smoke clouds_2
       rect:
         serializedVersion: 2
         x: 0
@@ -107,20 +158,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc0d2046268afbcf0800000000000000
-      internalID: -234283515061808945
+      spriteID: 700f16325f3dbbe70800000000000000
+      internalID: 9132125719237881863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Forgotten Tomb Character Design 2 Run_1
+      name: Smoke clouds_3
       rect:
         serializedVersion: 2
         x: 64
@@ -128,20 +179,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a5d3ad49f65a5f90800000000000000
-      internalID: -6964158245025622621
+      spriteID: f1f7cdd16c502a250800000000000000
+      internalID: 5954328005799870239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Forgotten Tomb Character Design 2 Run_2
+      name: Smoke clouds_4
       rect:
         serializedVersion: 2
         x: 0
@@ -149,20 +200,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33dabce8c71ead040800000000000000
-      internalID: 4673295488438218035
+      spriteID: 4043947beb91139d0800000000000000
+      internalID: -2796425586710858748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Forgotten Tomb Character Design 2 Run_3
+      name: Smoke clouds_5
       rect:
         serializedVersion: 2
         x: 64
@@ -170,14 +221,35 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2abda152155fceb50800000000000000
+      internalID: 6623938880818830242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Smoke clouds_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3
+        width: 128
+        height: 174
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66215ccdd81c8b4c0800000000000000
-      internalID: -4271451431522463130
+      spriteID: 48a00f1af558bcfc0800000000000000
+      internalID: -3473536041800955260
       vertices: []
       indices: 
       edges: []

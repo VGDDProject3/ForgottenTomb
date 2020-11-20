@@ -57,10 +57,25 @@ public class PlayerMovement : MonoBehaviour
     private bool useMousePosForDash;
 
     [SerializeField]
+    private bool cancelMomentumBeforeDash;
+
+    [SerializeField]
+    private GameObject objectPoolPrefab;
+
+    [SerializeField]
     private GameObject jumpEffect;
 
     [SerializeField]
-    private GameObject dashAfterImage;
+    private GameObject afterimage;
+
+    [SerializeField]
+    private GameObject landingEffect;
+
+    [SerializeField]
+    private GameObject runEffect;
+
+    [SerializeField]
+    private GameObject dashEffect;
 
     #endregion
 
@@ -88,6 +103,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isDashing = false;
 
+    private bool hasAfterimages = false;
+
     private bool isTouchingEnvironmentWall = false;
 
     private Side? lastWallJumpedSide;
@@ -95,6 +112,11 @@ public class PlayerMovement : MonoBehaviour
     public bool IsGrounded { get => isGrounded; set => isGrounded = value; }
     public bool IsFacingRight { get => isFacingRight; set => isFacingRight = value; }
     public bool IsTouchingEnvironmentWall { get => isTouchingEnvironmentWall; set => isTouchingEnvironmentWall = value; }
+
+    private ObjectPool jumpEffectObjectPool, afterimageObjectPool, landingEffectObjectPool, runEffectObjectPool, dashEffectObjectPool;
+    private bool wasGrounded = false;
+    
+    
     #endregion
 
     #region Collectible variables
@@ -112,6 +134,22 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        jumpEffectObjectPool = Instantiate(objectPoolPrefab, Vector3.zero, Quaternion.identity).GetComponent<ObjectPool>();
+        jumpEffectObjectPool.CreateObjectPoolWithPrefab(jumpEffect, startingAirJumps + 1);
+
+        afterimageObjectPool = Instantiate(objectPoolPrefab, Vector3.zero, Quaternion.identity).GetComponent<ObjectPool>();
+        afterimageObjectPool.CreateObjectPoolWithPrefab(afterimage);
+
+        landingEffectObjectPool = Instantiate(objectPoolPrefab, Vector3.zero, Quaternion.identity).GetComponent<ObjectPool>();
+        landingEffectObjectPool.CreateObjectPoolWithPrefab(landingEffect, 3);
+
+        runEffectObjectPool = Instantiate(objectPoolPrefab, Vector3.zero, Quaternion.identity).GetComponent<ObjectPool>();
+        runEffectObjectPool.CreateObjectPoolWithPrefab(runEffect, 20);
+
+        dashEffectObjectPool = Instantiate(objectPoolPrefab, Vector3.zero, Quaternion.identity).GetComponent<ObjectPool>();
+        dashEffectObjectPool.CreateObjectPoolWithPrefab(dashEffect, startingDashes + 1);
+
         TouchedGroundReset();
     }
     #endregion
@@ -149,11 +187,23 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (hasAfterimages)
+        {
+            afterimageObjectPool.GetFromPool();
+        }
         if (isDashing)
         {
             return;
         }
         Move();
+
+            // the landing effect
+        if (isGrounded && !wasGrounded)
+        {
+            GameObject tempLandingEffect = landingEffectObjectPool.GetFromPool();
+            tempLandingEffect.transform.position = this.transform.position;
+        }
+        wasGrounded = isGrounded;
     }
 
     #endregion
@@ -174,6 +224,15 @@ public class PlayerMovement : MonoBehaviour
         if (Mathf.Abs(rb.velocity.x) < maxPlayerInputMoveSpeed)
         {
             rb.AddForce(new Vector2(moveForce * movementX, 0));
+        }
+        else if (IsGrounded)
+        {
+            if (Random.Range(1, 3) == 1)
+            {
+                GameObject tempRunEffect = runEffectObjectPool.GetFromPool();
+                tempRunEffect.transform.position = this.transform.position;
+                tempRunEffect.transform.localScale = this.transform.localScale;
+            }
         }
         
 
@@ -220,8 +279,9 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
 
-            // creating and destroying the jump effect
-        Destroy(Instantiate(jumpEffect, this.transform.position, Quaternion.identity), 0.5f);
+        // creating and destroying the jump effect
+        GameObject tempJumpEffect = jumpEffectObjectPool.GetFromPool();
+        tempJumpEffect.transform.position = this.transform.position;
         anim.SetTrigger("jump");
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(new Vector2(0, jumpForce));
@@ -252,9 +312,20 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator Dash(Vector2 dashDirection)
     {
+        GameObject tempDashEffect = dashEffectObjectPool.GetFromPool();
+        tempDashEffect.transform.position = this.transform.position;
+        tempDashEffect.transform.LookAt(( (Vector2) this.transform.position) + dashDirection);
+
         float originalGravityScale = rb.gravityScale;
+        
         //rb.velocity = Vector2.zero;
         isDashing = true;
+
+        if (cancelMomentumBeforeDash)
+        {
+            rb.velocity = Vector2.zero;
+        }
+        hasAfterimages = true;
         rb.gravityScale = 0;
 
         rb.AddForce(dashDirection);
@@ -263,6 +334,11 @@ public class PlayerMovement : MonoBehaviour
 
         rb.gravityScale = originalGravityScale;
         isDashing = false;
+
+        yield return new WaitForSeconds(0.1f);
+
+        hasAfterimages = false;
+
     }
 
     private void Flip()

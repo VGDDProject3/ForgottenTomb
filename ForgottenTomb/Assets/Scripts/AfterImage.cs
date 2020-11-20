@@ -22,10 +22,10 @@ public class AfterImage : MonoBehaviour
     [SerializeField]
     private float alphaMultiplier = 0.5f;
 
-    private void Start()
-    {
-        this.gameObject.SetActive(false);
-    }
+    //private void Start()
+    //{
+    //    this.gameObject.SetActive(false);
+    //}
 
     private void OnEnable()
     {
@@ -37,6 +37,7 @@ public class AfterImage : MonoBehaviour
         renderer.sprite = playerRenderer.sprite;
         transform.position = playerTransform.position;
         transform.rotation = playerTransform.rotation;
+        renderer.flipX = playerTransform.localScale.x < 0;
         startTime = Time.time;
     }
 
@@ -47,7 +48,8 @@ public class AfterImage : MonoBehaviour
         renderer.color = currentColor;
         if (Time.time >= (startTime + activeTime))
         {
-            this.gameObject.SetActive(false);
+            GetComponentInParent<ObjectPool>().AddToPool(this.gameObject);
+            //this.gameObject.SetActive(false);
         }
     }
 }
