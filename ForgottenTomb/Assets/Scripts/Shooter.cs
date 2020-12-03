@@ -19,8 +19,12 @@ public class Shooter : MonoBehaviour
 	private float bulletTime = 5;
 
     [SerializeField]
-    // Shoot right (1) or left (-1)
-	private int dir = 1;
+    [Tooltip("Shoot right (1), left (-1), neither (0)")]
+	private int xdir = 1;
+
+    [SerializeField]
+    [Tooltip("Shoot up (1), down (-1), neither (0)")]
+	private int ydir = 0;
     #endregion
 
     float reloadTimer = 0;
@@ -31,7 +35,7 @@ public class Shooter : MonoBehaviour
 		if (reloadTimer > timeToReload) {
             reloadTimer = 0;
             //calculate the trajectory vector
-            Vector2 FireDirection = new Vector2 (dir, 0);
+            Vector2 FireDirection = new Vector2 (xdir, ydir);
             FireDirection = FireDirection.normalized * fireSpeed;
 
             // Create the projectile and Access its Rigidbody to add force

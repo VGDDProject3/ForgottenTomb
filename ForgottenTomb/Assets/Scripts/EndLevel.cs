@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class EndLevel : MonoBehaviour
 {
+    [SerializeField]
+    private GameManager gameManager;
     private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.CompareTag("Player"))
-        {
-            GameObject gm = GameObject.FindWithTag("GameController");
-            gm.GetComponent<GameManager>().WinGame();
+        {;
+            gameManager.WinGame();
         }
     }
 }

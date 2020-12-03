@@ -5,11 +5,18 @@ using UnityEngine;
 public class FadeEnd : MonoBehaviour
 {
     [SerializeField]
-    private GameManager gameManager;
+    private FadeManager fadeManager;
+
+    [SerializeField]
+    private int level = 1;
 
     public void OnFadeEnd() {
-        AudioSource audio = gameManager.GetComponent<AudioSource>();
+        AudioSource audio = fadeManager.GetComponent<AudioSource>();
         audio.mute = !audio.mute;
-        gameManager.StartGame();
+        if (level == 1) {
+            fadeManager.StartGame();
+        } else {
+            fadeManager.LevelTwo();
+        }
     }
 }

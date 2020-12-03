@@ -7,12 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
 
-    [SerializeField]
-    private GameObject fade;
-
-    [SerializeField]
-    private Animator fadeAnim;
-
     #region Unity_functions
     private void Awake()
     {
@@ -48,12 +42,6 @@ public class GameManager : MonoBehaviour
     public void ExitGame() {
         Application.Quit();
         Debug.Log("The game will close in build");
-    }
-
-    public void FadeIn() {
-        Debug.Log("Makes fade active");
-        fade.gameObject.SetActive(!fade.gameObject.activeSelf);
-        fadeAnim.SetTrigger("fadeStart");
     }
     #endregion
 }
