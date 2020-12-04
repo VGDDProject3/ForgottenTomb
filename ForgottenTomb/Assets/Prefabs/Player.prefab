@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 9076058088702209365}
   - component: {fileID: 9076058089481885448}
   - component: {fileID: 9076058089481885462}
+  - component: {fileID: -8963822253581170729}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -332,12 +333,20 @@ MonoBehaviour:
   minimumXVelocity: 0.5
   useMousePosForDash: 1
   cancelMomentumBeforeDash: 0
-  objectPoolPrefab: {fileID: 0}
-  jumpEffect: {fileID: 0}
-  afterimage: {fileID: 0}
-  landingEffect: {fileID: 0}
-  runEffect: {fileID: 0}
-  dashEffect: {fileID: 0}
+  objectPoolPrefab: {fileID: 6120607327889084337, guid: f472c493e92a943e9b2c4525da3bda80,
+    type: 3}
+  jumpEffect: {fileID: 362153213844631872, guid: 72a2d2899e38e4e8693d0481d219c1ae,
+    type: 3}
+  afterimage: {fileID: 237586798951171175, guid: 5347b4d1d72c74287a035bac4eb34a0c,
+    type: 3}
+  landingEffect: {fileID: 4270612836084491728, guid: 02c6031768f61489b9b888326fa54d25,
+    type: 3}
+  runEffect: {fileID: 8141913903869462434, guid: 9a2301f63f3b844fca367049eb1586bf,
+    type: 3}
+  dashEffect: {fileID: 2483610158470132154, guid: 252e15e1fbf1347c5ac30e47fd05ce1e,
+    type: 3}
+  deathEffect: {fileID: 3352389356263773876, guid: eddb28ef28b754d0aaa13a9da36bc9f1,
+    type: 3}
 --- !u!114 &9076058088702209365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,6 +414,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointManager: {fileID: 0}
+--- !u!114 &-8963822253581170729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714255019474024797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 
+  m_ShapePath:
+  - {x: -0.10897958, y: -0.4777882, z: 0}
+  - {x: -0.034528293, y: -0.4790653, z: 0}
+  - {x: -0.0698069, y: -0.33354098, z: 0}
+  - {x: -0.030118465, y: -0.27180332, z: 0}
+  - {x: 0.018389627, y: -0.307082, z: 0}
+  - {x: 0.018389627, y: -0.46583593, z: 0}
+  - {x: 0.13252962, y: -0.4689685, z: 0}
+  - {x: 0.10658638, y: 0.16917959, z: 0}
+  - {x: 0.022799447, y: 0.27060568, z: 0}
+  - {x: 0.09335691, y: 0.30147457, z: 0}
+  - {x: 0.07079205, y: 0.43401527, z: 0}
+  - {x: -0.060471475, y: 0.44724467, z: 0}
+  - {x: -0.122724816, y: 0.35880238, z: 0}
+  - {x: -0.07862655, y: 0.24855661, z: 0}
+  - {x: -0.21092147, y: 0.14713052, z: 0}
+  - {x: -0.25942954, y: -0.1086396, z: 0}
+  m_ShapePathHash: -1958577119
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 86948
 --- !u!1 &9076058088754101061
 GameObject:
   m_ObjectHideFlags: 0

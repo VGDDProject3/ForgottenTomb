@@ -44,6 +44,8 @@ public class Grapple : MonoBehaviour
 
     private bool grappling = false;
 
+    private bool mustCancelGrapple = false;
+
     #endregion
 
     #region Unity Functions
@@ -122,6 +124,7 @@ public class Grapple : MonoBehaviour
     private IEnumerator ManageGrapple(Vector2 hitPoint, GameObject hitObject)
     {
         grappling = true;
+        mustCancelGrapple = false;
 
         GameObject tempFulcrum = Instantiate(fulcrum, hitPoint, Quaternion.identity);
         tempFulcrum.transform.SetParent(hitObject.transform);
@@ -137,7 +140,7 @@ public class Grapple : MonoBehaviour
 
         Rigidbody2D rb = this.gameObject.GetComponent<Rigidbody2D>();
 
-        while (Input.GetButton("Fire2"))
+        while (Input.GetButton("Fire2") && !mustCancelGrapple)
         {
             rb.velocity += new Vector2(rb.velocity.normalized.x, 0) * linearSwingAcceleration; // adds some extra directional acceleration
 
@@ -150,6 +153,8 @@ public class Grapple : MonoBehaviour
 
             yield return null; 
         }
+
+        mustCancelGrapple = false;
 
         // adding some velocity at the end of the grapple
         rb.velocity += rb.velocity.normalized * releaseSpeedBoost;
@@ -184,6 +189,18 @@ public class Grapple : MonoBehaviour
         Vector2 startPos = this.transform.position;
         return startPos + new Vector2(mousePos.x - startPos.x, mousePos.y - startPos.y).normalized * grappleRange;
         
+    }
+
+    #endregion
+
+    #region Public Functions
+
+    public void DetachGrapple()
+    {
+        if (grappling)
+        {
+            mustCancelGrapple = true;
+        }
     }
 
     #endregion

@@ -7,6 +7,9 @@ public class Coin : MonoBehaviour
     #region Editor Variables
     [SerializeField]
     private PlayerMovement playerMovement;
+
+    [SerializeField]
+    private GameObject collectionEffect;
     #endregion
     public void ObtainCoin() 
     {
@@ -20,6 +23,10 @@ public class Coin : MonoBehaviour
         {
             Debug.Log("touch coin");
             ObtainCoin();
+            if (collectionEffect != null)
+            {
+                Instantiate(collectionEffect, this.transform.position, Quaternion.identity);
+            }
             Destroy(this.gameObject);
         }
      }
