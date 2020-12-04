@@ -129,7 +129,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -331,6 +331,13 @@ MonoBehaviour:
   xVelDecayRate: 0.1
   minimumXVelocity: 0.5
   useMousePosForDash: 1
+  cancelMomentumBeforeDash: 0
+  objectPoolPrefab: {fileID: 0}
+  jumpEffect: {fileID: 0}
+  afterimage: {fileID: 0}
+  landingEffect: {fileID: 0}
+  runEffect: {fileID: 0}
+  dashEffect: {fileID: 0}
 --- !u!114 &9076058088702209365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +358,20 @@ MonoBehaviour:
   springinessDecayFactor: 0.05
   minSpringiness: 1
   maxSpringiness: 5
+  grappleExtendTime: 0
+  grappleRetractTime: 0
+  extendCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  retractCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   fulcrum: {fileID: 7757803410187410347, guid: 88927d57e4df1421cad98ece42c76cc5, type: 3}
 --- !u!95 &9076058089481885448
 Animator:
