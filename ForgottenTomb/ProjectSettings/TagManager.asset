@@ -40,12 +40,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Parallax
+    uniqueID: 1638920463
+    locked: 0
   - name: Background
     uniqueID: 2097131565
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Parallax
-    uniqueID: 1638920463
+  - name: Environment
+    uniqueID: 2289130947
     locked: 0
