@@ -77,6 +77,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject dashEffect;
 
+    [SerializeField]
+    private GameObject deathEffect;
+
     #endregion
 
     #region Cached Components
@@ -111,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
     public bool IsGrounded { get => isGrounded; set => isGrounded = value; }
     public bool IsFacingRight { get => isFacingRight; set => isFacingRight = value; }
     public bool IsTouchingEnvironmentWall { get => isTouchingEnvironmentWall; set => isTouchingEnvironmentWall = value; }
-    private ObjectPool jumpEffectObjectPool, afterimageObjectPool, landingEffectObjectPool, runEffectObjectPool, dashEffectObjectPool;
+    private ObjectPool jumpEffectObjectPool, afterimageObjectPool, landingEffectObjectPool, runEffectObjectPool, dashEffectObjectPool, deathEffectObjectPool;
     private bool wasGrounded = false;
     #endregion
 
@@ -145,6 +148,9 @@ public class PlayerMovement : MonoBehaviour
 
         dashEffectObjectPool = Instantiate(objectPoolPrefab, Vector3.zero, Quaternion.identity).GetComponent<ObjectPool>();
         dashEffectObjectPool.CreateObjectPoolWithPrefab(dashEffect, startingDashes + 1);
+
+        deathEffectObjectPool = Instantiate(objectPoolPrefab, Vector3.zero, Quaternion.identity).GetComponent<ObjectPool>();
+        deathEffectObjectPool.CreateObjectPoolWithPrefab(deathEffect, 1);
 
         TouchedGroundReset();
     }
@@ -367,9 +373,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void Respawn()
     {
+        GameObject tempDeathEffect = deathEffectObjectPool.GetFromPool();
+        tempDeathEffect.transform.position = this.transform.position;
+        this.GetComponent<Grapple>().DetachGrapple();
         movementX = 0;
         movementY = 0;
         rb.velocity = Vector2.zero;
+
     }
     #endregion
 

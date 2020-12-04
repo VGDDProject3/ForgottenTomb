@@ -8,6 +8,9 @@ public class Coin : MonoBehaviour
     [SerializeField]
     private PlayerMovement playerMovement;
     static GameManager gameManager;
+
+    [SerializeField]
+    private GameObject collectionEffect;
     #endregion
 
     void Start() {
@@ -28,6 +31,10 @@ public class Coin : MonoBehaviour
         {
             Debug.Log("touch coin");
             ObtainCoin();
+            if (collectionEffect != null)
+            {
+                Instantiate(collectionEffect, this.transform.position, Quaternion.identity);
+            }
             Destroy(this.gameObject);
         }
      }
