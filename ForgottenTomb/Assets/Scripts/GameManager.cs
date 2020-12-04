@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
 
+    static int Coins = 1;
+
     #region Unity_functions
     private void Awake()
     {
@@ -43,5 +45,16 @@ public class GameManager : MonoBehaviour
         Application.Quit();
         Debug.Log("The game will close in build");
     }
+
+    public int NumCoins() {
+        return Coins;
+    }
+    public void AddCoin() {
+        Coins += 1;
+    }
+    public void ResetCoins() {
+        Coins = 0;
+    }
+    
     #endregion
 }

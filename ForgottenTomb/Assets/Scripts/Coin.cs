@@ -7,10 +7,18 @@ public class Coin : MonoBehaviour
     #region Editor Variables
     [SerializeField]
     private PlayerMovement playerMovement;
+    static GameManager gameManager;
     #endregion
+
+    void Start() {
+        if (gameManager == null ) {
+            gameManager = (GameManager) Object.FindObjectOfType(typeof(GameManager));
+        }
+    }
     public void ObtainCoin() 
     {
         playerMovement.Coins = playerMovement.Coins + 1;
+        gameManager.AddCoin();
 
     }
 

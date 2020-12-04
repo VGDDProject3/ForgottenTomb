@@ -15,8 +15,12 @@ public class FadeEnd : MonoBehaviour
         audio.mute = !audio.mute;
         if (level == 1) {
             fadeManager.StartGame();
-        } else {
+        } else if (level == 2) {
             fadeManager.LevelTwo();
+        } else if (level == 3) {
+            fadeManager.Level3Intro();
+        } else {
+            fadeManager.LevelThree();
         }
     }
 }
