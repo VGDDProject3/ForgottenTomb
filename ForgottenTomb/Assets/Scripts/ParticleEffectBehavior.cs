@@ -10,16 +10,25 @@ public class ParticleEffectBehavior : MonoBehaviour
     [SerializeField]
     private bool hasLifetime = true;
 
+    [SerializeField]
+    private bool enabledOnStart = true;
+
     private float creationTime = -1;
 
     private void OnEnable()
     {
         creationTime = Time.time;
+        ToggleParticleEmission(enabledOnStart);
     }
 
     private void Update()
     {
-        if ((creationTime + lifetime <= Time.time) && hasLifetime && (creationTime != -1))
+        if (!hasLifetime)
+        {
+            return;
+        }
+
+        if ((creationTime + lifetime <= Time.time) && (creationTime != -1))
         {
             creationTime = -1;
             ObjectPool pool = GetComponentInParent<ObjectPool>();
@@ -33,6 +42,19 @@ public class ParticleEffectBehavior : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
+        }
+    }
+
+    public void ToggleParticleEmission(bool emit)
+    {
+        ParticleSystem ps = GetComponent<ParticleSystem>();
+        if (emit && ps.isStopped)
+        {
+            ps.Play();
+        }
+        if (!emit && ps.isPlaying)
+        {
+            ps.Stop();
         }
     }
 }

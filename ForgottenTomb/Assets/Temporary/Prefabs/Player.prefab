@@ -335,6 +335,8 @@ MonoBehaviour:
   minimumXVelocity: 0.5
   useMousePosForDash: 1
   cancelMomentumBeforeDash: 1
+  hasHighVelocityEffect: 1
+  minVelocityForEffect: 12
   objectPoolPrefab: {fileID: 6120607327889084337, guid: f472c493e92a943e9b2c4525da3bda80,
     type: 3}
   jumpEffect: {fileID: 362153213844631872, guid: 72a2d2899e38e4e8693d0481d219c1ae,
@@ -507,7 +509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
   m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
+  m_UseRendererSilhouette: 0
   m_CastsShadows: 1
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 2db0ff7c000000000ff1af61
@@ -541,7 +543,7 @@ MonoBehaviour:
   - {x: -0.107595444, y: -0.2980662, z: 0}
   m_ShapePathHash: -1388817981
   m_Mesh: {fileID: 0}
-  m_InstanceId: 21278
+  m_InstanceId: -268520
 --- !u!1 &8851450318595375583
 GameObject:
   m_ObjectHideFlags: 0

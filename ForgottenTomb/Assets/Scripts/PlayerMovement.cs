@@ -60,6 +60,18 @@ public class PlayerMovement : MonoBehaviour
     private bool cancelMomentumBeforeDash;
 
     [SerializeField]
+    private bool hasHighVelocityEffect;
+
+    [SerializeField]
+    private float minVelocityForEffect;
+
+    [SerializeField]
+    private float jumpCoyoteTime;
+
+    [SerializeField]
+    private float wallJumpCoyoteTime;
+
+    [SerializeField]
     private GameObject objectPoolPrefab;
 
     [SerializeField]
@@ -79,6 +91,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private GameObject deathEffect;
+
+    [SerializeField]
+    private GameObject wallSlideEffect;
 
     #endregion
 
@@ -111,10 +126,17 @@ public class PlayerMovement : MonoBehaviour
 
     private Side? lastWallJumpedSide;
 
+    private float lastTimeOnWall = -1;
+    private float lastTimeGrounded = -1;
+
+    private bool canWallJump = false;
+    private bool canGroundJump = false;
+
     public bool IsGrounded { get => isGrounded; set => isGrounded = value; }
     public bool IsFacingRight { get => isFacingRight; set => isFacingRight = value; }
     public bool IsTouchingEnvironmentWall { get => isTouchingEnvironmentWall; set => isTouchingEnvironmentWall = value; }
     private ObjectPool jumpEffectObjectPool, afterimageObjectPool, landingEffectObjectPool, runEffectObjectPool, dashEffectObjectPool, deathEffectObjectPool;
+    private ParticleEffectBehavior wallSlideBehavior;
     private bool wasGrounded = false;
     #endregion
 
@@ -152,6 +174,9 @@ public class PlayerMovement : MonoBehaviour
         deathEffectObjectPool = Instantiate(objectPoolPrefab, Vector3.zero, Quaternion.identity).GetComponent<ObjectPool>();
         deathEffectObjectPool.CreateObjectPoolWithPrefab(deathEffect, 1);
 
+        wallSlideBehavior = Instantiate(wallSlideEffect, this.transform).GetComponent<ParticleEffectBehavior>();
+        wallSlideBehavior.ToggleParticleEmission(false);
+
         TouchedGroundReset();
     }
     #endregion
@@ -166,17 +191,53 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("xvelocity", Mathf.Abs(movementX));
         anim.SetBool("grounded", IsGrounded);
 
+        if (isGrounded)
+        {
+            lastTimeGrounded = Time.time;
+            canGroundJump = true;
+        }
+        else
+        {
+            canGroundJump = (Time.time - jumpCoyoteTime) < lastTimeGrounded;
+        }
+
+        if (isTouchingEnvironmentWall
+            && !canGroundJump
+            && ((isFacingRight && lastWallJumpedSide != Side.Right) ||
+            !isFacingRight && lastWallJumpedSide != Side.Left))
+        {
+            lastTimeOnWall = Time.time;
+            canWallJump = true;
+
+            anim.SetBool("wallsliding", true);
+            wallSlideBehavior.ToggleParticleEmission(true);
+        }
+        else
+        {
+            canWallJump = (Time.time - wallJumpCoyoteTime) < lastTimeOnWall;
+
+            anim.SetBool("wallsliding", false);
+            wallSlideBehavior.ToggleParticleEmission(false);
+        }
+
+        
+
+        
+
         if (isDashing)
         {
             return;
         }
+        else if (hasHighVelocityEffect)
+        {
+            hasAfterimages = (rb.velocity.magnitude > minVelocityForEffect);
+        }
 
-        if (Input.GetButtonDown("Jump") && isTouchingEnvironmentWall && ((isFacingRight && lastWallJumpedSide != Side.Right) ||
-            !isFacingRight && lastWallJumpedSide != Side.Left))
+        if (Input.GetButtonDown("Jump") && canWallJump)
         {
             WallJump();
         }
-        else if (Input.GetButtonDown("Jump") && (isGrounded || numAirJumps >= 1))
+        else if (Input.GetButtonDown("Jump") && !canWallJump && (canGroundJump || numAirJumps >= 1))
         {
             Jump();
         }
@@ -265,6 +326,10 @@ public class PlayerMovement : MonoBehaviour
             force = wallJumpForce;
             lastWallJumpedSide = Side.Left;
         }
+        // creating and destroying the jump effect
+        GameObject tempJumpEffect = jumpEffectObjectPool.GetFromPool();
+        tempJumpEffect.transform.position = this.transform.position;
+        anim.SetTrigger("jump");
         rb.velocity = new Vector2(0, 0);
         rb.AddForce(new Vector2(force, Mathf.Abs(force)));
     }
