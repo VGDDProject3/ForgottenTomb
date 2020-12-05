@@ -79,7 +79,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private GameObject deathEffect;
-
     #endregion
 
     #region Cached Components
@@ -116,10 +115,13 @@ public class PlayerMovement : MonoBehaviour
     public bool IsTouchingEnvironmentWall { get => isTouchingEnvironmentWall; set => isTouchingEnvironmentWall = value; }
     private ObjectPool jumpEffectObjectPool, afterimageObjectPool, landingEffectObjectPool, runEffectObjectPool, dashEffectObjectPool, deathEffectObjectPool;
     private bool wasGrounded = false;
+
+    private bool canMove = true;
+    public bool CanMove { get => canMove; set => canMove = value; }
     #endregion
 
     #region Collectible variables
-    private int keys = 0;
+    private int keys = 3;
 
     public int Keys { get => keys; set => keys = value; }
 
@@ -159,6 +161,9 @@ public class PlayerMovement : MonoBehaviour
     #region Update Functions
     private void Update()
     {
+        if (!canMove) {
+            return;
+        }
         movementX = Input.GetAxisRaw("Horizontal");
         movementY = Input.GetAxisRaw("Vertical");
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
