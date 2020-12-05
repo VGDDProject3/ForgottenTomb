@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
 
     private bool isDashing = false;
-    
+
     private bool hasAfterimages = false;
     private bool isTouchingEnvironmentWall = false;
 
@@ -138,10 +138,13 @@ public class PlayerMovement : MonoBehaviour
     private ObjectPool jumpEffectObjectPool, afterimageObjectPool, landingEffectObjectPool, runEffectObjectPool, dashEffectObjectPool, deathEffectObjectPool;
     private ParticleEffectBehavior wallSlideBehavior;
     private bool wasGrounded = false;
+
+    private bool canMove = true;
+    public bool CanMove { get => canMove; set => canMove = value; }
     #endregion
 
     #region Collectible variables
-    private int keys = 0;
+    private int keys = 3;
 
     public int Keys { get => keys; set => keys = value; }
 
@@ -184,6 +187,9 @@ public class PlayerMovement : MonoBehaviour
     #region Update Functions
     private void Update()
     {
+        if (!canMove) {
+            return;
+        }
         movementX = Input.GetAxisRaw("Horizontal");
         movementY = Input.GetAxisRaw("Vertical");
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -220,9 +226,9 @@ public class PlayerMovement : MonoBehaviour
             wallSlideBehavior.ToggleParticleEmission(false);
         }
 
-        
 
-        
+
+
 
         if (isDashing)
         {
@@ -297,9 +303,9 @@ public class PlayerMovement : MonoBehaviour
                 tempRunEffect.transform.localScale = this.transform.localScale;
             }
         }
-        
 
-        
+
+
             // capping max move speed horizontally
         if (rb.velocity.x > maxMoveSpeed) {
             rb.velocity = new Vector2(maxMoveSpeed, rb.velocity.y);
@@ -366,7 +372,7 @@ public class PlayerMovement : MonoBehaviour
             // just 'cuz I implemented both – if "isMouse" is true, the dash angle is calculated from the mouse position;
         if (isMouse)
         {
-            
+
             Vector2 startPos = this.transform.position;
             return new Vector2(mousePos.x - startPos.x, mousePos.y - startPos.y).normalized;
         }
@@ -384,7 +390,7 @@ public class PlayerMovement : MonoBehaviour
         tempDashEffect.transform.LookAt(( (Vector2) this.transform.position) + dashDirection);
 
         float originalGravityScale = rb.gravityScale;
-        
+
         //rb.velocity = Vector2.zero;
         isDashing = true;
 

@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Win");
     }
 
+    public void WinGame2()
+    {
+        SceneManager.LoadScene("Win2");
+    }
+
     public void MainMenu()
     {
         SceneManager.LoadScene("TitleMenu");
