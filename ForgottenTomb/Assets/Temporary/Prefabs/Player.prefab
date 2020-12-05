@@ -337,6 +337,8 @@ MonoBehaviour:
   cancelMomentumBeforeDash: 1
   hasHighVelocityEffect: 1
   minVelocityForEffect: 12
+  jumpCoyoteTime: 0.01
+  wallJumpCoyoteTime: 0.01
   objectPoolPrefab: {fileID: 6120607327889084337, guid: f472c493e92a943e9b2c4525da3bda80,
     type: 3}
   jumpEffect: {fileID: 362153213844631872, guid: 72a2d2899e38e4e8693d0481d219c1ae,
@@ -350,6 +352,8 @@ MonoBehaviour:
   dashEffect: {fileID: 2483610158470132154, guid: 252e15e1fbf1347c5ac30e47fd05ce1e,
     type: 3}
   deathEffect: {fileID: 3352389356263773876, guid: eddb28ef28b754d0aaa13a9da36bc9f1,
+    type: 3}
+  wallSlideEffect: {fileID: 8551808587346950688, guid: 3c7f9b3e0e8ed402b952d37a32c82bd2,
     type: 3}
 --- !u!114 &18461853
 MonoBehaviour:

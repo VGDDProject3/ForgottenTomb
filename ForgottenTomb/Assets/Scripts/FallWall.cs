@@ -14,7 +14,12 @@ public class FallWall : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("touch wall back");
-            Destroy(this.gameObject);
+            
+            foreach(Rigidbody2D rb in GetComponentsInChildren<Rigidbody2D>())
+            {
+                rb.isKinematic = false;
+            }
+            //Destroy(this.gameObject);
         }
      }
 }

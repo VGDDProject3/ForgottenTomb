@@ -10,14 +10,29 @@ public class IronDoor : MonoBehaviour
 
     [SerializeField]
     private int requiredKeys;
+
+    private Color fadeColor;
     #endregion
     public void OpenDoor() 
     {
-        if (playerMovement.Keys == requiredKeys) {
-            playerMovement.Keys = 0;
-            Destroy(this.gameObject);
+        if (playerMovement.Keys >= requiredKeys) {
+            playerMovement.Keys -= requiredKeys;
+            StartCoroutine(FadeAway(0.5f));
         }
 
+    }
+
+    private IEnumerator FadeAway(float timeInSeconds)
+    {
+        float startTime = Time.time;
+        fadeColor = GetComponent<SpriteRenderer>().color;
+        while (Time.time < startTime + timeInSeconds)
+        {
+            fadeColor.a = (Time.time - startTime) / timeInSeconds;
+            GetComponent<SpriteRenderer>().color = fadeColor;
+            yield return new WaitForEndOfFrame();
+        }
+        Destroy(this.gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -149,7 +149,10 @@ public class Grapple : MonoBehaviour
             tempSpringJoint.frequency *= springinessDecayFactor;
             tempSpringJoint.frequency = Mathf.Clamp(tempSpringJoint.frequency, minSpringiness, maxSpringiness);
 
-            grappleRenderer.SetPositions(new[] { this.gameObject.transform.position, tempFulcrum.transform.position });  // setting the LineRenderer positions
+            if (tempFulcrum != null)
+            {
+                grappleRenderer.SetPositions(new[] { this.gameObject.transform.position, tempFulcrum.transform.position });  // setting the LineRenderer positions
+            }
 
             yield return null; 
         }

@@ -21,7 +21,7 @@ public class Key : MonoBehaviour
      {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("touch key");
+            Debug.Log("touch key; Player had " + playerMovement.Keys);
             ObtainKey();
             if (collectionEffect != null)
             {

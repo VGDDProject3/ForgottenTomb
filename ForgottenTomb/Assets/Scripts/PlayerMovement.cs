@@ -144,7 +144,7 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region Collectible variables
-    private int keys = 3;
+    private int keys = 0;
 
     public int Keys { get => keys; set => keys = value; }
 
