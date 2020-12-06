@@ -11,11 +11,25 @@ public class IronDoor : MonoBehaviour
     [SerializeField]
     private int requiredKeys;
 
+    [SerializeField]
+    private AudioClip openSound;
+
+    [SerializeField]
+    [Range(0.0f, 1f)]
+    private float openSoundVolume;
+
+    [SerializeField]
+    [Range(0.0f, 3f)]
+    private float openSoundPitch;
+    #endregion
+
+    #region Private Variables
     private Color fadeColor;
     #endregion
     public void OpenDoor() 
     {
         if (playerMovement.Keys >= requiredKeys) {
+            SoundPlayer.PlaySound(openSound, transform.position, openSoundVolume, openSoundPitch);
             playerMovement.Keys -= requiredKeys;
             StartCoroutine(FadeAway(0.5f));
         }

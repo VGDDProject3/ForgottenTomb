@@ -173,6 +173,9 @@ MonoBehaviour:
   playerMovement: {fileID: 0}
   collectionEffect: {fileID: 2762882439408909150, guid: 84f9a7ea51e7e4bfb8b270d587d91f95,
     type: 3}
+  pickupSound: {fileID: 8300000, guid: ae72017a807bd43319c1b9ad86f00251, type: 3}
+  pickupSoundVolume: 0.6
+  pickupSoundPitch: 1.2
 --- !u!58 &9184827999105352192
 CircleCollider2D:
   m_ObjectHideFlags: 0
