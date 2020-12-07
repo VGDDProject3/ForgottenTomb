@@ -31,7 +31,8 @@ public class IronDoor : MonoBehaviour
         if (playerMovement.Keys >= requiredKeys) {
             SoundPlayer.PlaySound(openSound, transform.position, openSoundVolume, openSoundPitch);
             playerMovement.Keys -= requiredKeys;
-            StartCoroutine(FadeAway(0.5f));
+            GetComponent<BoxCollider2D>().enabled = false;
+            StartCoroutine(FadeAway(0.3f));
         }
 
     }
@@ -42,10 +43,12 @@ public class IronDoor : MonoBehaviour
         fadeColor = GetComponent<SpriteRenderer>().color;
         while (Time.time < startTime + timeInSeconds)
         {
-            fadeColor.a = (Time.time - startTime) / timeInSeconds;
+            fadeColor.a = 1 - ((Time.time - startTime) / timeInSeconds);
+            print(1 - ((Time.time - startTime) / timeInSeconds));
             GetComponent<SpriteRenderer>().color = fadeColor;
             yield return new WaitForEndOfFrame();
         }
+        GetComponent<SpriteRenderer>().enabled = false;
         Destroy(this.gameObject);
     }
 

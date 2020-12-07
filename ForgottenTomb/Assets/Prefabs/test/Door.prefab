@@ -123,3 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 0}
   requiredKeys: 2
+  openSound: {fileID: 8300000, guid: 6ff158caf7410426d8bd062ef4b4070c, type: 3}
+  openSoundVolume: 0.3
+  openSoundPitch: 1.2
