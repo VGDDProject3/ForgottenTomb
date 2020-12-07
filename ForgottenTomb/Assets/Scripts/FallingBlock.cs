@@ -2,15 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallingBlock : MonoBehaviour
+public class FallingBlock : MonoBehaviour, Resettable
 {
-    private bool touched = false;
     [SerializeField]
-    private float countdown = 30;
+    private bool resetOnPlayerDeath = true;
+    [SerializeField]
+    private float initialCountdown = 30;
 
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+    private float countdown;
+    private Rigidbody2D rb; 
+
+    private bool touched = false;
+
+    private void Start()
+    {
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
+        if (resetOnPlayerDeath)
+        {
+            FindObjectOfType<CheckpointManager>().AddToThingsToReset(this);
+        }
+        rb = GetComponent<Rigidbody2D>();
+        countdown = initialCountdown;
+    }
     void Update() {
-        if (countdown == 0 && touched) {
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (countdown <= 0 && touched) {
+            
             rb.bodyType = RigidbodyType2D.Dynamic;
             rb.gravityScale = 1;
         } 
@@ -25,5 +44,16 @@ public class FallingBlock : MonoBehaviour
             Debug.Log("touch fall block");
             touched = true;
         }
+    }
+
+    public void Reset()
+    {
+        touched = false;
+        transform.position = initialPosition;
+        transform.rotation = initialRotation;
+        rb.gravityScale = 0;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.velocity = Vector2.zero;
+        countdown = initialCountdown;
     }
 }
