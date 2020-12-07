@@ -10,6 +10,9 @@ public class PlayerSoundSources : MonoBehaviour
 
     [SerializeField]
     private List<AudioClip> jumpSounds;
+
+    [SerializeField]
+    private List<AudioClip> grappleClinkSounds;
     #endregion
 
 
@@ -20,6 +23,10 @@ public class PlayerSoundSources : MonoBehaviour
 
     private AudioSource airJumpAudioSource;
 
+    private AudioSource wallJumpAudioSource;
+
+    private AudioSource grappleClinkAudioSource;
+
     private float airJumpOriginalPitch;
     #endregion
 
@@ -29,6 +36,8 @@ public class PlayerSoundSources : MonoBehaviour
         walkAudioSource = audioSources[0];
         jumpAudioSource = audioSources[1];
         airJumpAudioSource = audioSources[2];
+        wallJumpAudioSource = audioSources[3];
+        grappleClinkAudioSource = audioSources[4];
 
         airJumpOriginalPitch = airJumpAudioSource.pitch;
     }
@@ -40,23 +49,40 @@ public class PlayerSoundSources : MonoBehaviour
 
     public void PlayJumpSound()
     {
-        jumpAudioSource.clip = jumpSounds[Random.Range(0, jumpSounds.Count)];
+        jumpAudioSource.clip = RandomClip(jumpSounds);
         jumpAudioSource.Play();
     }
 
 
     public void PlayAirJumpSound(int pitchAddition)
     {
-        airJumpAudioSource.clip = jumpSounds[Random.Range(0, jumpSounds.Count)];
+        airJumpAudioSource.clip = RandomClip(jumpSounds);
         airJumpAudioSource.pitch = airJumpOriginalPitch + pitchAddition;
         airJumpAudioSource.Play();
         SetPitch(airJumpAudioSource, airJumpOriginalPitch, airJumpAudioSource.clip.length /  airJumpAudioSource.pitch);
     }
 
-    IEnumerator SetPitch(AudioSource audioSource, float pitch, float timeToWait)
+    public void PlayWallJumpSound()
+    {
+        wallJumpAudioSource.clip = RandomClip(jumpSounds);
+        wallJumpAudioSource.Play();
+    }
+
+    public void PlayGrappleClinkSound()
+    {
+        grappleClinkAudioSource.clip = RandomClip(grappleClinkSounds);
+        grappleClinkAudioSource.Play();
+    }
+
+    private IEnumerator SetPitch(AudioSource audioSource, float pitch, float timeToWait)
     {
         yield return new WaitForSeconds(timeToWait);
         audioSource.pitch = pitch;
+    }
+
+    private AudioClip RandomClip(List<AudioClip> clips)
+    {
+        return clips[Random.Range(0, clips.Count)];
     }
 
 }

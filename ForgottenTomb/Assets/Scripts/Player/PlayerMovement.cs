@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
     private GameObject wallSlideEffect;
 
     [SerializeField]
-    private PlayerSoundSources soundSources;
+    private PlayerSoundSources playerSoundSources;
     #endregion
 
     #region Cached Components
@@ -334,7 +334,7 @@ public class PlayerMovement : MonoBehaviour
             force = wallJumpForce;
             lastWallJumpedSide = Side.Left;
         }
-        soundSources.PlayJumpSound();
+        playerSoundSources.PlayWallJumpSound();
         // creating and destroying the jump effect
         GameObject tempJumpEffect = jumpEffectObjectPool.GetFromPool();
         tempJumpEffect.transform.position = this.transform.position;
@@ -348,12 +348,12 @@ public class PlayerMovement : MonoBehaviour
         if (!isGrounded)
         {
             numAirJumps--;
-            soundSources.PlayAirJumpSound(maxAirJumps - numAirJumps);
+            playerSoundSources.PlayAirJumpSound(maxAirJumps - numAirJumps);
         }
         else
         {
             isGrounded = false;
-            soundSources.PlayJumpSound();
+            playerSoundSources.PlayJumpSound();
         }
 
         // creating and destroying the jump effect

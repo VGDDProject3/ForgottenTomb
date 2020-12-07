@@ -36,6 +36,8 @@ public class Grapple : MonoBehaviour
     [SerializeField]
     private GameObject fulcrum;
 
+    [SerializeField]
+    private PlayerSoundSources playerSoundSources;
     #endregion
 
     #region Private Variables
@@ -82,6 +84,7 @@ public class Grapple : MonoBehaviour
         {
             print("Hit something at " + hit.point.ToString());
             Debug.DrawLine(startPos, hit.point, Color.green, 2.0f);
+            playerSoundSources.PlayGrappleClinkSound();
 
             StartCoroutine(ExtendGrapple(hit.point, hit.collider.gameObject));
             return true;
