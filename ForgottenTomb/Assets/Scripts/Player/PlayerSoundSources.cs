@@ -67,7 +67,7 @@ public class PlayerSoundSources : MonoBehaviour
     }
 
 
-    public void PlayAirJumpSound(int pitchAddition)
+    public void PlayAirJumpSound(float pitchAddition)
     {
         airJumpAudioSource.clip = RandomClip(jumpSounds);
         airJumpAudioSource.pitch = airJumpOriginalPitch + pitchAddition;
@@ -87,9 +87,9 @@ public class PlayerSoundSources : MonoBehaviour
         grappleClinkAudioSource.Play();
     }
 
-    public void PlayDashSound()
+    public void PlayDashSound(float pitchAddition)
     {
-
+        
     }
 
     public void PlayDeathSound()
