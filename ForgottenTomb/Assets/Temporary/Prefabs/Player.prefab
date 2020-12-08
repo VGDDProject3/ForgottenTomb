@@ -504,8 +504,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 3
+  m_Volume: 0.05
+  m_Pitch: 2.2
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1096,7 +1096,7 @@ MonoBehaviour:
   - {x: -0.107595444, y: -0.2980662, z: 0}
   m_ShapePathHash: -1388817981
   m_Mesh: {fileID: 0}
-  m_InstanceId: 41624
+  m_InstanceId: 27858
 --- !u!1 &8851450318595375583
 GameObject:
   m_ObjectHideFlags: 0

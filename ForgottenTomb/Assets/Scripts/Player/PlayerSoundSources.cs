@@ -27,6 +27,7 @@ public class PlayerSoundSources : MonoBehaviour
 
     private AudioSource grappleClinkAudioSource;
 
+    private float walkOriginalPitch;
     private float airJumpOriginalPitch;
     #endregion
 
@@ -39,12 +40,14 @@ public class PlayerSoundSources : MonoBehaviour
         wallJumpAudioSource = audioSources[3];
         grappleClinkAudioSource = audioSources[4];
 
+        walkOriginalPitch = walkAudioSource.pitch;
         airJumpOriginalPitch = airJumpAudioSource.pitch;
     }
 
     public void PlayWalkSound()
     {
-
+        walkAudioSource.clip = RandomClip(walkSounds);
+        jumpAudioSource.Play();
     }
 
     public void PlayJumpSound()
