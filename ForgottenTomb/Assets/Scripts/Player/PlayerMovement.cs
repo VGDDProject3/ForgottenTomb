@@ -97,9 +97,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private PlayerSoundSources playerSoundSources;
-
-    [SerializeField]
-    private float walkSoundPeriod;
     #endregion
 
     #region Cached Components
@@ -143,8 +140,6 @@ public class PlayerMovement : MonoBehaviour
     private ObjectPool jumpEffectObjectPool, afterimageObjectPool, landingEffectObjectPool, runEffectObjectPool, dashEffectObjectPool, deathEffectObjectPool;
     private ParticleEffectBehavior wallSlideBehavior;
     private bool wasGrounded = false;
-
-    private float lastTimeWalkSound = 0;
 
     private bool canMove = true;
     public bool CanMove { get => canMove; set => canMove = value; }
@@ -297,16 +292,6 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(newXVel, rb.velocity.y);
         }
 
-        if (isGrounded && Mathf.Abs(movementX) > 0)
-        {
-            float currTime = Time.fixedTime;
-            if (currTime - lastTimeWalkSound >= walkSoundPeriod)
-            {
-                playerSoundSources.PlayWalkSound();
-                lastTimeWalkSound = currTime;
-            }
-        }
-
         if (Mathf.Abs(rb.velocity.x) < maxPlayerInputMoveSpeed)
         {
             rb.AddForce(new Vector2(moveForce * movementX, 0));
@@ -320,6 +305,8 @@ public class PlayerMovement : MonoBehaviour
                 tempRunEffect.transform.localScale = this.transform.localScale;
             }
         }
+
+
 
             // capping max move speed horizontally
         if (rb.velocity.x > maxMoveSpeed) {
