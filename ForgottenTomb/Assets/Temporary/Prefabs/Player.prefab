@@ -120,7 +120,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -606,6 +606,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 08634c3b2bc4c4151b4c0caa88b9a0fb, type: 3}
   - {fileID: 8300000, guid: 17c38571ab415436283566a7d13a636d, type: 3}
   - {fileID: 8300000, guid: b60115a7238354087b30b742f9fbe90d, type: 3}
+  walkPitchVariation: 0.1
   jumpSounds:
   - {fileID: 8300000, guid: 34a14458175f045b8b1637ac6951bf77, type: 3}
   - {fileID: 8300000, guid: 80d71e05b897b49aeb462f42cede65f5, type: 3}
@@ -903,6 +904,7 @@ MonoBehaviour:
   wallSlideEffect: {fileID: 8551808587346950688, guid: 3c7f9b3e0e8ed402b952d37a32c82bd2,
     type: 3}
   playerSoundSources: {fileID: 2699590666299746375}
+  walkSoundPeriod: 0.18
 --- !u!114 &18461853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1096,7 +1098,7 @@ MonoBehaviour:
   - {x: -0.107595444, y: -0.2980662, z: 0}
   m_ShapePathHash: -1388817981
   m_Mesh: {fileID: 0}
-  m_InstanceId: 27858
+  m_InstanceId: 26132
 --- !u!1 &8851450318595375583
 GameObject:
   m_ObjectHideFlags: 0
