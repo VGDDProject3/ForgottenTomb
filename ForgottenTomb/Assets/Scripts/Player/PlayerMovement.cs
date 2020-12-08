@@ -302,7 +302,6 @@ public class PlayerMovement : MonoBehaviour
             float currTime = Time.fixedTime;
             if (currTime - lastTimeWalkSound >= walkSoundPeriod)
             {
-                Debug.Log(currTime);
                 playerSoundSources.PlayWalkSound();
                 lastTimeWalkSound = currTime;
             }
@@ -382,6 +381,7 @@ public class PlayerMovement : MonoBehaviour
     {
         numDashes--;
         //rb.AddForce();//, ForceMode2D.Impulse);
+        playerSoundSources.PlayDashSound(1.75f * (maxDashes - numDashes));
         StartCoroutine(Dash(CreateDashVector(useMousePosForDash) * dashForce));
     }
 

@@ -600,10 +600,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_audioClip: {fileID: 8300000, guid: a598fa0924aad47d5a94eed15499f42e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
+  m_Pitch: 2.5
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -696,10 +696,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_audioClip: {fileID: 8300000, guid: 9dd9d4760b70a4ac4b274d122ad5c2d4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 2.8
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -813,6 +813,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 554537d227d5b48a7badad1d5a21fc8f, type: 3}
   - {fileID: 8300000, guid: 9f4f4615fdf7646e3aa9d23e6a23c5f2, type: 3}
   - {fileID: 8300000, guid: 78f6bf49d0e234514bb067170145d0e5, type: 3}
+  deathPitchVariation: 0.1
 --- !u!1 &7655806440360353941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,6 +1204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointManager: {fileID: 0}
+  playerSoundSources: {fileID: 2699590666299746375}
 --- !u!114 &3350459451186323614
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,9 @@ public class PlayerSoundSources : MonoBehaviour
 
     [SerializeField]
     private List<AudioClip> grappleClinkSounds;
+
+    [SerializeField]
+    private float deathPitchVariation;
     #endregion
 
 
@@ -38,6 +41,8 @@ public class PlayerSoundSources : MonoBehaviour
     private float airJumpOriginalPitch;
 
     private float dashOriginalPitch;
+
+    private float deathOriginalPitch;
     #endregion
 
     private void Start()
@@ -53,6 +58,8 @@ public class PlayerSoundSources : MonoBehaviour
 
         walkOriginalPitch = walkAudioSource.pitch;
         airJumpOriginalPitch = airJumpAudioSource.pitch;
+        dashOriginalPitch = dashAudioSource.pitch;
+        deathOriginalPitch = deathAudioSource.pitch;
     }
 
     public void PlayWalkSound()
@@ -97,7 +104,8 @@ public class PlayerSoundSources : MonoBehaviour
 
     public void PlayDeathSound()
     {
-        
+        deathAudioSource.pitch = Random.Range(deathOriginalPitch - deathPitchVariation, deathOriginalPitch + deathPitchVariation);
+        deathAudioSource.Play();
     }
 
     private IEnumerator SetPitch(AudioSource audioSource, float pitch, float timeToWait)
