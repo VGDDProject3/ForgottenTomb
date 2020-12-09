@@ -22,6 +22,7 @@ public class Level3End : MonoBehaviour
         if (collision.tag.Equals("Player"))
         {
             camPanner.SetActive(true);
+            fm.GetComponent<AudioSource>().mute = true;
             StartCoroutine("End");
         }
     }
