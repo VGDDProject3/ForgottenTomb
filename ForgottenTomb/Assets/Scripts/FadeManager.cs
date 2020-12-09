@@ -50,8 +50,12 @@ public class FadeManager : MonoBehaviour
 
     public void LevelThree()
     {
-        Debug.Log("Loads last level");
-        //SceneManager.LoadScene("INSERT NAME OF THIRD LEVEL");
+        SceneManager.LoadScene("Level3");
+    }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene("End");
     }
     #endregion
 }

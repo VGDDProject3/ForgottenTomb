@@ -19,8 +19,10 @@ public class FadeEnd : MonoBehaviour
             fadeManager.LevelTwo();
         } else if (level == 3) {
             fadeManager.Level3Intro();
-        } else {
+        } else if (level == 4) {
             fadeManager.LevelThree();
+        } else if (level == 5) {
+            fadeManager.EndGame();
         }
     }
 }
